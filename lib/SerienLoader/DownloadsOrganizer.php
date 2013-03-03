@@ -131,6 +131,8 @@ class DownloadsOrganizer extends \Psc\Object {
       
       $this->log(NULL);
     }
+    
+    return $episodes;
   }
   
   public function startEpisode($episode) {

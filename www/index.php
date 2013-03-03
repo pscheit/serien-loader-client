@@ -4,43 +4,57 @@ namespace SerienLoader;
 
 use Webforge\Common\System\Dir;
 use Webforge\Common\System\File;
+use Webforge\Setup\ApplicationStorage;
+use Psc\System\BufferLogger;
 
 require_once __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'bootstrap.php';
-require __DIR__.DIRECTORY_SEPARATOR.'inc.config.php';
+
+$appStorage = new ApplicationStorage('serien-loader');
+$configFile = $appStorage->getFile('inc.config.php');
+
+if ($configFile->exists()) {
+  require $configFile;
+} else {
+  $configDistFile = new File(__DIR__.DIRECTORY_SEPARATOR.'inc.config.dist.php');
+  $configFile->getDirectory()->create();
+  $configDistFile->copy($configFile);
+  print 'Bitte unbedingt die Variablen in '.$configFile.' anpassen!';
+  exit;
+}
+
+if (!$conf['downloadDir'] || !$conf['targetDir']) {
+  print 'Bitte unbedingt die Variablen downloadDir und targetDir in '.$configFile.' anpassen!';
+  exit;
+}
 
 $reload = isset($_GET['reload']);
-$conf['serienLoaderURL'] = 'http://'.$_SERVER['HTTP_HOST'].'/mock';
+
+$client = new Client($conf['serienLoaderURL']);
 
 if ($reload) {
-
   $organizer = new DownloadsOrganizer(
     new Dir($conf['downloadDir']),
     new Dir($conf['targetDir']),
-    new Client($conf['serienLoaderURL']),
-    new JDownloaderRPC($conf['jdownloader']['host'], $conf['jdownloader']['port'])
+    $client,
+    new JDownloaderRPC($conf['jdownloader']['host'], $conf['jdownloader']['port']),
+    $subtitlesManager = NULL,
+    new BufferLogger()
   );
   
   $organizer->setHosterPrio($conf['hosterPrio']);
-  $organizer->organize();
+  $episodes = $organizer->organize();
+} else {
+  $episodes = $client->getEpisodes();
 }
 
-$episodes = Array(
-  (object) array(
-    'info'=>'Castle.2009.S05E14.720p.HDTV.x264-DIMENSION',
-    'status'=>'scheduled'
-  ),
-  (object) array(
-    'info'=>'How.I.Met.Your.Mother.S08E17.720p.HDTV.264-DIMENSION',
-    'status'=>'wait_for_sub'
-  ),
-  (object) array(
-    'info'=>'In.Treatment.S01E20.German.Dubbed.DL.DVDRIP.WS.XviD-TvR',
-    'status'=>'downloading'
-  )
-);
-
-$episodesJs = json_encode($episodes);
-
+$episodesJs = array();
+foreach ($episodes as $episode) {
+  $episodesJs[] = (object) array(
+    'info'=>$episode->getInfo(),
+    'status'=>$episode->getStatus()
+  );
+}
+$episodesJs = json_encode($episodesJs);
 
 $version = NULL;
 ?><!DOCTYPE html>
