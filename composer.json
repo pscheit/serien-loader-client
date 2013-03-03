@@ -1,0 +1,16 @@
+{
+    "name": "pscheit/serien-loader-client",
+    "authors": [
+        {
+            "name": "Philipp Scheit",
+            "email": "p.scheit@ps-webforge.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": {"SerienLoader": ["lib/"]}
+    },
+    "require": {
+
+    }
+}
