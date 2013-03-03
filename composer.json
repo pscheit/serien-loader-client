@@ -8,9 +8,9 @@
     ],
     "minimum-stability": "dev",
     "autoload": {
-        "psr-0": {"SerienLoader": ["lib/"]}
+        "psr-0": {"SerienLoaderrq": ["lib/"]}
     },
     "require": {
-
+        "pscheit/psc-cms": "dev-master"
     }
 }
