@@ -9,6 +9,7 @@ require_once __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'bootstrap.php
 require __DIR__.DIRECTORY_SEPARATOR.'inc.config.php';
 
 $reload = isset($_GET['reload']);
+$conf['serienLoaderURL'] = 'http://'.$_SERVER['HTTP_HOST'].'/mock';
 
 if ($reload) {
 
@@ -20,7 +21,7 @@ if ($reload) {
   );
   
   $organizer->setHosterPrio($conf['hosterPrio']);
-  $organizer->organize($output);
+  $organizer->organize();
 }
 
 $episodes = Array(
