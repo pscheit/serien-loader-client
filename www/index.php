@@ -161,7 +161,7 @@ $version = NULL;
       }
     };
     
-    ko.applyBindings(new EpisodesList(<?= $episodesJs ?>));
+    ko.applyBindings(new EpisodesList(<?php echo $episodesJs ?>));
   </script>
   </body>
 </html>
