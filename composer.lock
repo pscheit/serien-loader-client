@@ -1,5 +1,5 @@
 {
-    "hash": "97d7ffe1967fc01fee34589d7ebc714b",
+    "hash": "826a41f9e9c9fe207ebd6cb7a94fb2a7",
     "packages": [
         {
             "name": "CodePlex/PHPExcel",
@@ -345,12 +345,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pscheit/psc-cms.git",
-                "reference": "9f64606b1cee5769ca57bbd7aa3b3ebd53e01eb6"
+                "reference": "492c010ca4a6f74b858ba49bde11a3a67dfc1f4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pscheit/psc-cms/zipball/9f64606b1cee5769ca57bbd7aa3b3ebd53e01eb6",
-                "reference": "9f64606b1cee5769ca57bbd7aa3b3ebd53e01eb6",
+                "url": "https://api.github.com/repos/pscheit/psc-cms/zipball/492c010ca4a6f74b858ba49bde11a3a67dfc1f4e",
+                "reference": "492c010ca4a6f74b858ba49bde11a3a67dfc1f4e",
                 "shasum": ""
             },
             "require": {
@@ -372,8 +372,13 @@
                 "doctrine/data-fixtures": "1.0.*@alpha",
                 "webforge/testdata-repository": "dev-master"
             },
-            "time": "2013-03-03 14:40:57",
+            "time": "2013-03-04 12:54:00",
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2.x-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "Psc": [
@@ -700,12 +705,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pscheit/webforge.git",
-                "reference": "b39801189131852097107d17afaaf6ae8c351bad"
+                "reference": "c77f586e90574aa40fd9aeda74821d5a6af1844e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pscheit/webforge/zipball/b39801189131852097107d17afaaf6ae8c351bad",
-                "reference": "b39801189131852097107d17afaaf6ae8c351bad",
+                "url": "https://api.github.com/repos/pscheit/webforge/zipball/c77f586e90574aa40fd9aeda74821d5a6af1844e",
+                "reference": "c77f586e90574aa40fd9aeda74821d5a6af1844e",
                 "shasum": ""
             },
             "require": {
@@ -722,7 +727,7 @@
                 "phpmd/phpmd": "1.4.0",
                 "webforge/testdata-repository": "dev-master"
             },
-            "time": "2013-02-24 14:21:32",
+            "time": "2013-03-03 18:16:09",
             "bin": [
                 "bin/webforge"
             ],

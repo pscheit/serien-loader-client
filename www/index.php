@@ -28,8 +28,8 @@ if (!$conf['downloadDir'] || !$conf['targetDir']) {
 }
 
 $reload = isset($_GET['reload']);
-
 $client = new Client($conf['serienLoaderURL']);
+$log = NULL;
 
 if ($reload) {
   $organizer = new DownloadsOrganizer(
@@ -38,13 +38,14 @@ if ($reload) {
     $client,
     new JDownloaderRPC($conf['jdownloader']['host'], $conf['jdownloader']['port']),
     $subtitlesManager = NULL,
-    new BufferLogger()
+    $log = new BufferLogger()
   );
   
   $organizer->setHosterPrio($conf['hosterPrio']);
   $episodes = $organizer->organize();
 } else {
   $episodes = $client->getEpisodes();
+  $log = 'nothing was updated. Hit reload';
 }
 
 $episodesJs = array();
@@ -95,7 +96,7 @@ $version = NULL;
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="/">SerienLoader Client <?= $version ?></a>
+          <a class="brand" href="/">SerienLoader Client <?php echo $version ?></a>
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="active"><a href="/?reload">Episodes</a></li>
@@ -119,13 +120,21 @@ $version = NULL;
           </tr>
         </thead>
         <tbody data-bind="foreach: episodes">
-          <tr data-bind="css: statusColor()">
+          <tr>
             <td data-bind="text: info"></td>
-            <td data-bind="text: status"></td>
+            <td data-bind="html: statusLabel()"></td>
             <td>&nbsp;</td>
           </tr>
         </tbody>
       </table>
+      
+      <p>
+        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#progress-log">progress log</button>
+        
+        <div class="collapse" id="progress-log">
+          <?php echo nl2br($log) ?>
+        </div>
+      </p>
 
     </div>
 
@@ -148,6 +157,22 @@ $version = NULL;
           return '';
         }
       };
+      
+      this.statusLabel = function () {
+        var label = 'default';
+        
+        if (that.status === 'wait_for_sub') {
+          label = 'warning';
+        } else if (that.status === 'finished') {
+          label = 'success';
+        } else if (that.status === 'scheduled') {
+          label = 'info';
+        } else if (that.status === 'downloading' || that.status === 'downloaded') {
+          label = 'inverse';
+        }
+        
+        return '<span class="label label-'+label+'">'+that.status+'</span>';
+      }
     };
     
     function EpisodesList(rows) {
