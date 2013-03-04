@@ -1,3 +1,5 @@
 /vendor/
 
 /www/inc.config.php
+*.komodoproject
+.komodotools
