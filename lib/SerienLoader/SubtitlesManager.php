@@ -169,7 +169,7 @@ class SubtitlesManager extends \Psc\Object {
         $subs = $this->sc->getSubs($threadLink);
         
         if (count($subs) > 0) {
-          $dir->make(Dir::PARENT | Dir::ASSERT_EXISTS);  
+          $dir->create();
           // subs ist ein array von [$episodeNum][$language][$format] = $attachmentURL;
           // von subcentral haben leider aber $format immer nur sowas wie "IMMERSE"
           // wir haben aber meist sowas wie x264-IMMERSE.720p (und wollen das auch so als Dateinamen)
