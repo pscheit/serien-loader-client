@@ -59,7 +59,7 @@ $episodesJs = json_encode($episodesJs);
 
 $version = NULL;
 ?><!DOCTYPE html>
-<html lang="de">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
   <head>
     <meta charset="utf-8">
     <title>SerienLoader Client</title>
@@ -108,7 +108,7 @@ $version = NULL;
 
     <div class="container">      
       <p>
-        <a href="/?reload" class="btn btn-large" type="button">Reload</a>
+        <a href="/?reload" class="btn btn-large">Reload</a>
       </p>
 
       <table class="table table-striped">
@@ -130,12 +130,11 @@ $version = NULL;
       
       <p>
         <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#progress-log">progress log</button>
-        
-        <div class="collapse" id="progress-log">
-          <?php echo nl2br($log) ?>
-        </div>
       </p>
-
+        
+      <div class="collapse" id="progress-log">
+        <?php echo nl2br($log) ?>
+      </div>
     </div>
 
   <script type="text/javascript">
