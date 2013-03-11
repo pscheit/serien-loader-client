@@ -28,8 +28,10 @@ if (!$conf['downloadDir'] || !$conf['targetDir']) {
 }
 
 $reload = isset($_GET['reload']);
+$update = isset($_GET['update']);
 $client = new Client($conf['serienLoaderURL']);
 $log = NULL;
+$episodes = array();
 
 if ($reload) {
   $organizer = new DownloadsOrganizer(
@@ -43,6 +45,11 @@ if ($reload) {
   
   $organizer->setHosterPrio($conf['hosterPrio']);
   $episodes = $organizer->organize();
+  
+} elseif($update) {
+  $log = "Running self-update\n";
+  $log .= shell_exec('composer update --dev -v --working-dir="D:\www\SerienLoaderV2"');
+  
 } else {
   $episodes = $client->getEpisodes();
   $log = 'nothing was updated. Hit reload';
@@ -99,7 +106,8 @@ $version = NULL;
           <a class="brand" href="/">SerienLoader Client <?php echo $version ?></a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="/?reload">Episodes</a></li>
+              <li class="<?= $reload ? 'active' : '' ?>"><a href="/?reload">Episodes</a></li>
+              <li class="<?= $update ? 'active' : '' ?>"><a href="/?update">Update</a></li>
             </ul>
           </div>
         </div>
