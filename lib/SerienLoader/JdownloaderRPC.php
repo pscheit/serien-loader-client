@@ -119,16 +119,21 @@ class JDownloaderRPC extends \Psc\Object {
   public function confirmPackage($package) {
     $this->waitBusy();
     $this->send('action/grabber/confirm/'.rawurlencode($package));
+    $this->clearCachedDoc('downloadsList');
+    $this->clearCachedDoc('grabberList');
   }
   
   public function confirmLinks() {
     $this->waitBusy();
     $this->send('action/grabber/confirmall');
+    $this->clearCachedDoc('downloadsList');
+    $this->clearCachedDoc('grabberList');
   }
   
   public function removeLinks() {
     $this->waitBusy();
     $this->send('/action/grabber/removeall');
+    $this->clearCachedDoc('grabberList');
   }
   
   protected function waitForChecked(Array $links) {
@@ -193,6 +198,13 @@ class JDownloaderRPC extends \Psc\Object {
     }
     
     return $this->cache->$name;
+  }
+  
+  protected function clearCachedDoc($name) {
+    if (isset($this->cache->$name)) {
+      unset($this->cache->$name);
+    }
+    return $this;
   }
   
   /**
