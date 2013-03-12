@@ -49,7 +49,7 @@ if ($reload) {
 } elseif($update) {
   $root = Dir::factoryTS(__DIR__)->sub('../../../../');
   
-  $process = \Psc\System\Console\Process::build('composer')
+  $process = \Psc\System\Console\Process::build('composer.bat')
     ->addOption('working-dir', $root)
     ->addOption('prefer-dist')
     ->addOption('v')
