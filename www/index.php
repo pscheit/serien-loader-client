@@ -57,10 +57,12 @@ if ($reload) {
     ->addOption('v')
     ->addArgument('update')
     ->end();
+  
     
   $process->run();
   
-  $log = "Running self-update\n";
+  $log = "Running self-update. \n";
+  $log .= "run: ".$process->getCommandline()."\n";
   $log .= $process->getOutput()."\n";
   $log .= $process->getErrorOutput()."\n";
   
