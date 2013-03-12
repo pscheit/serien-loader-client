@@ -48,9 +48,10 @@ if ($reload) {
   $episodes = $organizer->organize();
   
 } elseif($update) {
-  $root = Dir::factoryTS(__DIR__)->sub('../../../../');
+  $root = Dir::factoryTS(__DIR__)->sub('../../../../')->resolvePath();
   
-  $process = \Psc\System\Console\Process::build('composer.bat')
+  $finder = new \Symfony\Component\Process\ExecutableFinder();
+  $process = \Psc\System\Console\Process::build($finder->find('composer'))
     ->addOption('working-dir', $root)
     ->addOption('prefer-dist')
     ->addOption('v')
