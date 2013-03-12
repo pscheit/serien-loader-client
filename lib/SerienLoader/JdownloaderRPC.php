@@ -151,7 +151,7 @@ class JDownloaderRPC extends \Psc\Object {
       $cnt = count(xml::query($doc, 'jdownloader packages[package_name="Unchecked"]'));
       
       if ($x >= $timeout) {
-        throw new \Psc\JDownloaderException('Timeout von '.$timeout.' Sekunden für link-checking hit.');
+        throw new JDownloaderException('Timeout von '.$timeout.' Sekunden für link-checking hit.');
       }
       
       $x++;
