@@ -30,6 +30,8 @@ class DownloadsOrganizer extends \Psc\Object {
   protected $subtitlesManager;
   
   protected $logger;
+  
+  protected $xbmc;
 
   public function __construct(Dir $downloadDir, Dir $targetDir, Client $client, JDownloaderRPC $jdownloader = NULL, SubtitlesManager $subtitlesManager = NULL, Logger $logger = NULL) {
     $this->jdownloader = $jdownloader ?: new JDownloaderRPC();
@@ -43,6 +45,7 @@ class DownloadsOrganizer extends \Psc\Object {
       NULL,
       $this->logger
     );
+    $this->xbmc = new XBMCApi();
   }
   
   public function organize() {

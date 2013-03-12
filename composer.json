@@ -11,7 +11,8 @@
     "psr-0": {"SerienLoader": ["lib/"]}
   },
   "require": {
-    "pscheit/psc-cms": "dev-master"
+    "pscheit/psc-cms": "dev-master",
+    "jsonrpc/jsonrpc": "1.0.*"
   },
   "extra": {
     "branch-alias": {

@@ -29,6 +29,7 @@ if (!$conf['downloadDir'] || !$conf['targetDir']) {
 
 $reload = isset($_GET['reload']);
 $update = isset($_GET['update']);
+$scan = isset($_GET['scan']);
 $client = new Client($conf['serienLoaderURL']);
 $log = NULL;
 $episodes = array();
@@ -61,6 +62,12 @@ if ($reload) {
   $log = "Running self-update\n";
   $log .= $process->getOutput()."\n";
   $log .= $process->getErrorOutput()."\n";
+  
+} elseif($scan) {
+  $xbmc = new XBMC($conf['xbmc']['username'], $conf['xbmc']['password'], $conf['xbmc']['port']);
+  
+  $log = 'Forcing XBMC to scan. Response: ';
+  $log .= $xbmc->scan();
   
 } else {
   $episodes = $client->getEpisodes();
@@ -110,16 +117,12 @@ $version = NULL;
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
           <a class="brand" href="/">SerienLoader Client <?php echo $version ?></a>
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="<?= $reload ? 'active' : '' ?>"><a href="/?reload">Episodes</a></li>
               <li class="<?= $update ? 'active' : '' ?>"><a href="/?update">Update</a></li>
+              <li class="<?= $scan ? 'active' : '' ?>"><a href="/?scan">XBMC Scan</a></li>
             </ul>
           </div>
         </div>
@@ -127,7 +130,7 @@ $version = NULL;
     </div>
 
     <div class="container">
-      <?php if ($update): ?>
+      <?php if ($update || $scan): ?>
       <?php print nl2br($log); ?>
       <?php else: ?>
       <p>
