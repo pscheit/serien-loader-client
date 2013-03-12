@@ -198,6 +198,8 @@ $version = NULL;
           label = 'info';
         } else if (that.status === 'downloading' || that.status === 'downloaded') {
           label = 'inverse';
+        } else if (that.status === 'err_downloading_missing_files') {
+          label = 'important';
         }
         
         return '<span class="label label-'+label+'">'+that.status+'</span>';

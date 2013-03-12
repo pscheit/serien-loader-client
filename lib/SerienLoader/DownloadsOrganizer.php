@@ -251,12 +251,19 @@ class DownloadsOrganizer extends \Psc\Object {
         }
       } else {
         $package = $this->jdownloader->getPackage($packageName);
-        $this->log(
-          sprintf(
-            '    download noch nicht fertig. %d (%s/%s) Prozent abgeschlossen Warte.',
-            $package->getPercent(), $package->getLoaded(), $package->getSize()
-          )
-        );
+        
+        if ($package->hasMissingFiles()) {
+          $this->log('    package hat missing files. => neuer Status: MISSING_FILES');
+          $episode->setStatus(Status::MISSING_FILES);
+          
+        } else {
+          $this->log(
+            sprintf(
+              '    download noch nicht fertig. %d (%s/%s) Prozent abgeschlossen Warte.',
+              $package->getPercent(), $package->getLoaded(), $package->getSize()
+            )
+          );
+        }
       }
     } catch (\Exception $e) {
       $this->log('  abbort checking: '.$e->getMessage());
