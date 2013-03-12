@@ -51,6 +51,7 @@ if ($reload) {
   
   $process = \Psc\System\Console\Process::build('composer')
     ->addOption('working-dir', $root)
+    ->addOption('prefer-dist')
     ->addOption('v')
     ->addArgument('update')
     ->end();
