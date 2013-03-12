@@ -52,7 +52,7 @@ if ($reload) {
   
   $finder = new \Symfony\Component\Process\ExecutableFinder();
   $process = \Psc\System\Console\Process::build($finder->find('composer'))
-    ->addOption('working-dir', $root)
+    ->addOption('working-dir', mb_substr($root, 0,-1))
     ->addOption('prefer-dist')
     ->addOption('v')
     ->addArgument('update')
