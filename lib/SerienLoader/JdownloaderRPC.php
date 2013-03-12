@@ -105,8 +105,9 @@ class JDownloaderRPC extends \Psc\Object {
     $this->waitBusy();
     $this->log('downloadDir: '.$this->send('/action/grabber/set/downloaddir/'.rawurlencode($packageName).'/'.rawurlencode($downloadDir)));
     $this->waitBusy();
+    $this->clearCachedDoc('grabberList');
     if (!$this->hasGrabberPackage($packageName)) {
-      $e = new JDownloaderException('Es wurde versucht ein neues Paket hinzuzufuegen, dies klappte aber nicht: '.$packageName."\n ".implode("\n",$this->log));
+      $e = new JDownloaderException(sprintf("Es wurde versucht ein neues Paket (%s) hinzuzufuegen, dies klappte aber nicht\n", $packageName));
       throw $e;
     }
   }
@@ -138,9 +139,10 @@ class JDownloaderRPC extends \Psc\Object {
   
   protected function waitForChecked(Array $links) {
     $timeout = 20;
-    $x = 0;
+    $x = 5;
+    sleep(5);
+    
     do {
-      sleep(1);
       $xmls = $this->send('/get/grabber/list');
       $doc = xml::doc($xmls);
       
@@ -155,6 +157,7 @@ class JDownloaderRPC extends \Psc\Object {
       }
       
       $x++;
+      sleep(1);
     } while($cnt > 0);
   }
 
@@ -230,6 +233,13 @@ class JDownloaderRPC extends \Psc\Object {
   
   public function getLog() {
     return implode("\n", $this->log)."\n";
+  }
+  
+  public function flushLog() {
+    $log = $this->getLog();
+    $htis->log = array();
+    
+    return $log;
   }
 }
 ?>

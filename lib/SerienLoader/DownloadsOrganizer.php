@@ -126,7 +126,7 @@ class DownloadsOrganizer extends \Psc\Object {
         $this->client->updateEpisodeExtension($episode, $episode->getExtension());
         
       } catch (\Psc\Exception $e) {
-        $this->log('  CRITICAL ERROR: '.$e->getMessage().' '.mb_substr($e->getFile(),mb_strrpos($e->getFile(),'phar.gz')).':'.$e->getLine());
+        $this->log('  CRITICAL ERROR: '.$e->getMessage().' '.$e->getFile().':'.$e->getLine());
       }
       
       $this->log(NULL);
@@ -136,8 +136,6 @@ class DownloadsOrganizer extends \Psc\Object {
   }
   
   public function startEpisode($episode) {
-    $jd = $this->jdownloader;
-    
     try {
       
       /* wir nennen das Paket standarddisiert um es identifizieren zu können */
@@ -146,26 +144,26 @@ class DownloadsOrganizer extends \Psc\Object {
       $this->log(
         sprintf(
           '  hasPackage: %s / %s',
-          $jd->hasPackage($package) ? 'true' : 'false',
-          $jd->hasGrabberPackage($package) ? 'true' : 'false'
+          $this->jdownloader->hasPackage($package) ? 'true' : 'false',
+          $this->jdownloader->hasGrabberPackage($package) ? 'true' : 'false'
         )
       );
       
       /* wir schauen nach, ob der Download den wir hinzufügen wollen schon in der Liste vorhanden ist */
-      if (!$jd->hasPackage($package) && !$jd->hasGrabberPackage($package)) {
+      if (!$this->jdownloader->hasPackage($package) && !$this->jdownloader->hasGrabberPackage($package)) {
   
         /* wir haben den download nicht gefunden, also fügen wir diesen hinzu */
         $this->addLinksFromHosterPrio($episode);
         
         /* Package Starten */
-        $jd->confirmPackage($package);
+        $this->jdownloader->confirmPackage($package);
         $episode->setStatus(Status::DOWNLOADING);
         
-        $jd->start();
+        $this->jdownloader->start();
         
-      } elseif ($jd->hasGrabberPackage($package)) {
+      } elseif ($this->jdownloader->hasGrabberPackage($package)) {
         $this->log('  ist bereits im Grabber -> confirm');
-        $jd->confirmPackage($package);
+        $this->jdownloader->confirmPackage($package);
         
         $episode->setStatus(Status::DOWNLOADING);
         
@@ -175,6 +173,10 @@ class DownloadsOrganizer extends \Psc\Object {
       }
       
     } catch (NotDecryptedException $e) {
+      throw $e;
+    } catch (JDownloaderException $e) {
+      $this->log('  abbort processing: '.$e->getMessage());
+      $this->log('jdownloader: '.$this->jdownloader->flushLog());
       throw $e;
     } catch (\Exception $e) {
       $this->log('  abbort processing: '.$e->getMessage());
