@@ -47,8 +47,19 @@ if ($reload) {
   $episodes = $organizer->organize();
   
 } elseif($update) {
+  $root = Dir::factoryTS(__DIR__)->sub('../../../../');
+  
+  $process = \Psc\System\Console\Process::build('composer')
+    ->addOption('working-dir', $root)
+    ->addOption('v')
+    ->addArgument('update')
+    ->end();
+    
+  $process->run();
+  
   $log = "Running self-update\n";
-  $log .= shell_exec('composer update --dev -v --working-dir="D:\www\SerienLoaderV2"');
+  $log .= $process->getOutput()."\n";
+  $log .= $process->getErrorOutput()."\n";
   
 } else {
   $episodes = $client->getEpisodes();
@@ -114,7 +125,10 @@ $version = NULL;
       </div>
     </div>
 
-    <div class="container">      
+    <div class="container">
+      <?php if ($update): ?>
+      <?php print nl2br($log); ?>
+      <?php else: ?>
       <p>
         <a href="/?reload" class="btn btn-large">Reload</a>
       </p>
@@ -143,6 +157,7 @@ $version = NULL;
       <div class="collapse" id="progress-log">
         <?php echo nl2br($log) ?>
       </div>
+      <?php endif; ?>
     </div>
 
   <script type="text/javascript">
