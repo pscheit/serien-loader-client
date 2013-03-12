@@ -124,6 +124,27 @@ class JDownloaderRPC extends \Psc\Object {
     $this->clearCachedDoc('grabberList');
   }
   
+  // geht nur für grabber package to grabberpackage
+  //public function joinPackages($from, $to) {
+  //  $this->waitBusy();
+  //  
+  //  $output = $this->send('/action/grabber/join/'.rawurlencode($to).'/'.rawurlencode($from));
+  //  $this->log(sprintf('joinPackages %s %s: %s',$from,$to,$output));
+  //  var_dump($output);
+  //  
+  //  if (mb_stripos($output, 'error') !== FALSE) {
+  //    throw new JDownloaderException('Fehler beim Joinen von Packages: '.$output);
+  //  }
+  //  $this->clearCachedDoc('grabberList');
+  //  $this->clearCachedDoc('downloadsList');
+  //}
+  
+  public function removePackage($packageName) {
+    $output = $this->send('action/downloads/remove/'.rawurlencode($packageName));
+    $this->clearCachedDoc('downloadsList');
+    return $output;
+  }
+  
   public function confirmLinks() {
     $this->waitBusy();
     $this->send('action/grabber/confirmall');

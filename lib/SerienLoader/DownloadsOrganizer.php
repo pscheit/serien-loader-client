@@ -167,8 +167,12 @@ class DownloadsOrganizer extends \Psc\Object {
         
         $episode->setStatus(Status::DOWNLOADING);
         
-      } else {
-        /* wir haben den download gefunden, und schauen einfach ob der schon finished ist */
+        
+      } elseif ($this->jdownloader->hasPackage($package)) {
+        $this->log('  download in der Liste. Syncing links or missing links.');
+        
+        $this->syncLinksForPackage($this->jdownloader->getPackage($package), $episode);
+        
         $episode->setStatus(Status::DOWNLOADING);
       }
       
@@ -223,6 +227,19 @@ class DownloadsOrganizer extends \Psc\Object {
      * in diesem verzeichnis müssen wir dann nur nach .avi|.mkv oder so schauen
     */
     $this->jdownloader->addLinks($links, $episode->getPackageName(), $this->downloadDir->sub($episode->getPackageName()));
+  }
+  
+  protected function syncLinksForPackage(JDownloaderPackage $package, $episode) {
+    $allLinks = array();
+    foreach ($episode->getLinks() as $epLink) {
+      if (mb_strlen($epLink->getDecrypted()) > 0) {
+        $links = array_filter(array_map('trim',explode("\n",$epLink->getDecrypted())));
+        $allLinks = array_merge($allLinks, $links);
+      }
+    }
+    
+    $this->jdownloader->removePackage($episode->getPackageName());
+    $this->jdownloader->addLinks($allLinks, $episode->getPackageName(), $this->downloadDir->sub($episode->getPackageName()));
   }
   
   
