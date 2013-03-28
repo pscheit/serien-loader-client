@@ -3,3 +3,5 @@
 /www/inc.config.php
 *.komodoproject
 .komodotools
+
+/serien-loader-client.sublime-workspace
