@@ -258,9 +258,8 @@ class JDownloaderRPC extends \Psc\Object {
   
   public function flushLog() {
     $log = $this->getLog();
-    $htis->log = array();
+    $this->log = array();
     
     return $log;
   }
 }
-?>

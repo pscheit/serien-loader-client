@@ -24,6 +24,7 @@ class DownloadsOrganizer extends \Psc\Object {
   protected $targetDir;
   
   protected $hosterPrio = array('netload.in', 'share-online.biz','rapidshare.com');
+  protected $videoFiles = array('avi', 'mp4', 'mkv');
   
   protected $jdownloader;
   
@@ -305,7 +306,7 @@ class DownloadsOrganizer extends \Psc\Object {
     }
     
     /* eigentlich müssen wir ja nur die .avi finden, der rest ist für uns uninteressant */
-    $avis = $packageDir->getFiles(array('avi','mkv'), NULL, TRUE);
+    $avis = $packageDir->getFiles($this->videoFiles, NULL, TRUE);
     if (count($avis) > 1) {
       foreach ($avis as $key=>$avi) {
         if (mb_strpos($avi->getName(),'sample')) {
@@ -318,15 +319,15 @@ class DownloadsOrganizer extends \Psc\Object {
     if (count($avis) == 1) {
       /* Verschieben / Subs / Update */
       $video = current($avis);
-      $this->log('  Eine avi/mkv - Datei gefunden: '.$video);
+      $this->log('  Eine video - Datei gefunden: '.$video);
       
       $this->moveEpisodeVideo($episode, $video, $packageDir);
       
     } elseif(count($avis) > 1) {
-      $this->log('  Mehrere Avis/mkvs im Verzeichnis gefunden. Das kann ich noch nicht!');
+      $this->log('  Mehrere videos im Verzeichnis gefunden. Das kann ich noch nicht!');
     } else {
-      $this->log('  Keine avi/mkvs im Verzeichnis gefunden');
-      $this->log('  Cleanup fuer: '.$episode->getStatus().'?');
+      $this->log('  Keine vidoes im Verzeichnis gefunden. Extraction Failed.');
+      $episode->setStatus(Status::MISSING_FILES); // eigentlich extraction failed aber kein bock den srever nochmal zu patchen
     }
   }
   
