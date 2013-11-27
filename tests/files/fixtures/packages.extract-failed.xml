@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jdownloader>
+<packages package_ETA="~" package_linksinprogress="0" package_linkstotal="4" package_loaded="0 B" package_name="Two.and.a.Half.Men.S10E10.de.XviD-GDR" package_percent="0,00" package_size="0 B" package_speed="0 B" package_todo="0 B">
+<file file_downloaded="102.00 MiB" file_hoster="uploaded.to" file_name="taahm_dl_s10e10.part1.rar" file_package="Two.and.a.Half.Men.S10E10.de.XviD-GDR" file_percent="100,00" file_size="102.00 MiB" file_speed="0" file_status="Extract failed: taahm_dl_s10e10.part1.rar is not RAR archive"/>
+<file file_downloaded="102.00 MiB" file_hoster="uploaded.to" file_name="taahm_dl_s10e10.part2.rar" file_package="Two.and.a.Half.Men.S10E10.de.XviD-GDR" file_percent="100,00" file_size="102.00 MiB" file_speed="0" file_status="Extract failed: taahm_dl_s10e10.part1.rar is not RAR archive"/>
+<file file_downloaded="102.00 MiB" file_hoster="uploaded.to" file_name="taahm_dl_s10e10.part3.rar" file_package="Two.and.a.Half.Men.S10E10.de.XviD-GDR" file_percent="100,00" file_size="102.00 MiB" file_speed="0" file_status="Extract failed: taahm_dl_s10e10.part1.rar is not RAR archive"/>
+<file file_downloaded="12.95 MiB" file_hoster="uploaded.to" file_name="taahm_dl_s10e10.part4.rar" file_package="Two.and.a.Half.Men.S10E10.de.XviD-GDR" file_percent="100,00" file_size="12.95 MiB" file_speed="0" file_status="Extract failed: taahm_dl_s10e10.part1.rar is not RAR archive"/>
+</packages>
+</jdownloader>

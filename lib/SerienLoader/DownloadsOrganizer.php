@@ -391,6 +391,7 @@ class DownloadsOrganizer extends \Psc\Object {
           $subTarget = clone $this->getTargetFile($episode);
           $subTarget->setName($subTarget->getName(File::WITHOUT_EXTENSION).'-'.$lang.'.srt');
           $subTarget->getDirectory()->create();
+          
           if (!$subTarget->exists()) {
             $subTarget->writeContents($this->client->downloadSub($subTitles->$lang));
             $this->log('    ['.$lang.'] Sub gespeichert als: '.$subTarget->getName());

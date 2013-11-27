@@ -119,4 +119,3 @@ class Client {
     return $this->lastResponse;
   }
 }
-?>

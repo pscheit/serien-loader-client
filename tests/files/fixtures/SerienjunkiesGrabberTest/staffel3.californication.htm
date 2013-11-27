@@ -1,0 +1,769 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="de">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>Serienjunkies : Downloads &amp; Streams » Californication – Staffel 3 – DVDRip/WEB-DL – XviD/720p/DVD9/DVDR</title>
+<meta name="description" content="In der Serie “Californication” geht es um den Schriftsteller Hank Moody (David Duchovny), der versucht, seine 13-jährige Tochter richtig zu erziehen, während er in einem Sumpf aus Sex und Drogen steckt. Außerdem hängt er immer noch an seiner Ex-Freundin Karen." />
+<meta name="keywords" content="Dauer, Größe, Sprache, Format, HQ-Cover, Uploader, CalifornicationS03UntertitelpackWSDVDRiPXViD, Download, Download, Download" />
+<meta name="robots" content="index" />
+<link rel="canonical" href="http://serienjunkies.org/californication/californication-staffel-3-dvdripweb-dl-xvid720pdvd9dvdr/" />
+
+<meta name="google-site-verification" content="4DmqvyqV7XnJVmAosq7WJqO6mcyChnlnhdh8cH6yT7I" />
+<meta http-equiv="Content-Language" content="de" />
+<meta name="author" content="serienjunkies.org" /> 
+
+<meta name="revisit-after" content="1 days" />
+
+<link rel="icon" href="/media/img/favicon.ico" type="image/ico" />
+<link rel="stylesheet" type="text/css" href="http://serienjunkies.org/wp-content/themes/default/style.css?nocache=1326116312" media="screen" />
+<link rel="stylesheet" type="text/css" href="http://serienjunkies.org/wp-content/themes/default/stream.css?nocache=1326116312">
+<link rel="alternate" type="application/rss+xml" title="Serienjunkies &raquo; Episoden" href="http://serienjunkies.org/xml/feeds/episoden.xml" />
+<link rel="alternate" type="application/rss+xml" title="Serienjunkies &raquo; Staffeln" href="http://serienjunkies.org/xml/feeds/staffeln.xml" />
+<script type="text/javascript" src="/media/js/jquery.js"></script> 
+<script type="text/javascript" src="/media/js/startup.js?nocache=1326116312"></script> 
+<script type="text/javascript" src="/media/js/jquery.cookie.js"></script> 
+</head>
+<body>
+<div id="pBadge">
+	<a href="http://dokujunkies.org" target="_blank">
+		<img src="http://justpic.info/images/1006/djbagde.png" title="Serienjunkies - Hier findest Dokus / Shows / Magazine zum Download" alt="Serienjunkies.org" /> 
+	</a>
+
+</div>
+<div id="rap">
+<ul id="gnav">
+<li class="page_item" style="float: left;"><a title="Moviez Download und Stream" href="http://www.moviez.to" target="_blank">Moviez.to</a></li>
+<li class="page_item page-item-7313"><a href="http://serienjunkies.org" title="Home">Home</a></li>
+<li class="page_item page-item-7315 current_page_parent"><a href="http://serienjunkies.org/die-neusten/" title="Updates">Updates</a></li>
+<li class="page_item page-item-4738"><a href="http://serienjunkies.org/hilfe/" title="Hilfe">Hilfe</a></li>
+<li class="page_item"><a href="http://board.serienjunkies.org/" target="_blank" title="Serienjunkies Board">Board</a></li>
+<li class="page_item"><a href="http://upload.serienjunkies.org/" target="_blank" title="Hier kannst du selbst Serien hochladen">Userupload</a></li>
+</ul>
+<div id="header">
+
+<h1><a href="http://serienjunkies.org" title="serienjunkies.org"></a></h1>	
+</div>
+<script type="text/javascript">
+jQuery.noConflict();
+jQuery(function($) {
+	var mydata			  = jQuery.parseJSON('{"1":{"":"","1":"1","2":"2","3":"3","4":"4","5":"5","6":"6","7":"7","8":"8","9":"9","10":"10","11":"11","12":"12"},"2":{"1":"1","2":"2","3":"3","4":"4","5":"5","6":"6","7":"7","8":"8","9":"9","10":"10","11":"11","12":"12"},"3":{"1":"1","2":"2","3":"3","4":"4","5":"5","6":"6","7":"7","8":"8","9":"9","10":"10","11":"11","12":"12"},"4":{"1":"1","2":"2","3":"3","4":"4","5":"5","6":"6","7":"7","8":"8","9":"9","10":"10","11":"11","12":"12"},"5":{"1":"1"}}');
+	var seasonNum		  = 5;
+	var preselect_season  = null;
+	var preselect_episode = null;
+	var preselect		  = false;
+	function zebra(){
+		$('#table1 tbody tr').removeClass('odd even');
+		$('#table1 tbody tr:visible:odd').addClass('odd');
+		$('#table1 tbody tr:visible:even').addClass('even');
+	}
+	if(window.location.hash) {
+		var uri_hash = window.location.hash.slice(1);
+		if (uri_hash) {
+			var hash_data = uri_hash.split(',');
+			for(var i = 0; i < hash_data.length; i++) {
+				var element = parseInt(hash_data[i]);
+				if((typeof(element) == 'number') && (!isNaN(element))){
+					if (i == 0) {
+						var preselect_season = hash_data[i];
+					}
+					if (i == 1) {
+						var preselect_episode = hash_data[i];
+					}
+				}
+			}
+			
+			if(preselect_season) {
+				$("#season_list").val(preselect_season);
+			}
+		}
+	}
+	function initiate(){
+		seasonNum = $("#season_list").val();
+		
+		if(seasonNum == -1){
+			$('div.stopfilter').fadeOut();
+		}else{
+			$('div.stopfilter').fadeIn();
+		}
+		getStreams();
+		if($.cookie("stream_height") != null){
+			cookie_height = parseInt($.cookie("stream_height"));
+		}
+	}
+	
+	function getLangs(){
+		var l_list = $('#lang_list').empty();
+		l_list.append(new Option("Alle Sprachen", -1));
+		if($('.german:visible').length){
+			l_list.append('<option class="geropt" value="german">Deutsch</option>');
+		}
+		if($('.english:visible').length){
+			l_list.append('<option class="engopt" value="english">Englisch</option>');
+		}
+		if($('.dl:visible').length){
+			l_list.append('<option class="intopt" value="dl">Dual</option>');
+		}
+		if($('.eng:visible').length){
+			l_list.append('<option class="intopt" value="eng">Untertitel</option>');
+		}
+	}
+	
+	function filterReleases(){
+		episodeNum = $("#episode_list").val();
+		language = $("#lang_list").val();
+		
+		$('#table1 tbody tr').each(function(){
+			if($(this).hasClass('episode_'+episodeNum) || episodeNum == -1) { 
+				if($('.'+language, this).length || language == -1){
+					$(this).show();
+				}else{
+					$(this).hide();
+				}
+			}else{
+				$(this).hide();
+			}
+		});
+		
+		zebra();
+	}
+	
+	function getStreams(){
+		$('#table1 tbody').html('');
+		$('#ajax_loading').show();
+		$.getJSON('http://serienjunkies.org/media/ajax/getStreams.php', {s:seasonNum,ids:'0904208'}, function(data){
+			var tbody = '';
+			var mostPages = 0;
+			$.each(data, function(key, value){
+				var streams	= '';
+				var ticon	= 'add';
+				var sdesc	= 'Details zu diesem Stream anzeigen'
+				
+				if (value[5] == '1') {
+					var ticon = 'hd';
+					var sdesc	= 'Diese Episode ist ein HD-Stream in Top-Qualität'
+				}
+				var i = 0;
+				$.each(value[4], function(hoster, url){
+					var thisPage = Math.floor(i/6);
+					var prevPage = thisPage - 1;
+					if(thisPage > mostPages){
+						mostPages = thisPage;
+					}
+					if(i % 6 == 0 && i != 0){
+						streams = streams + '<span class="scroll_next p'+prevPage+'" title="Zeige weitere Streams" href="javascript:void(0);"><img alt=">" src="/media/img/stream/scroll_right.png"></span>';
+						streams = streams + '<span class="scroll_prev p'+thisPage+'" title="Zeige weitere Streams" href="javascript:void(0);"><img alt="<" src="/media/img/stream/scroll_left.png"></span>';
+					}
+					streams = streams+'<a href="http://crypt2.be/file/'+url+'" target="_blank" title="Stream bei '+hoster.charAt(0).toUpperCase()+hoster.substr(1)+' anschauen" class="p'+thisPage+'"><img src="/media/img/stream/'+hoster+'.png" alt="'+hoster+'" /></a>';
+					i++;
+				});
+				tbody = tbody+	'<tr class="episode_'+value[3]+'"><td><a class="getinfo" href="javascript:void(0);" title="'+sdesc+'" id="'+value[0]+'"><img src="/media/img/stream/'+ticon+'.png" alt="Info" /></a></td>'+
+								'<td>'+value[1]+'</td>'+
+								'<td class="lang '+value[2]+'">'+value[2]+'</td>'+
+								'<td>'+streams+'</td></tr>';
+			});
+			$('#ajax_loading').hide();
+			$('#table1 tbody').html(tbody);
+			for(var i = 1;i <= mostPages;i++){
+				$(".p"+i).hide();
+			}
+			/*
+			$('.scroll_next').mouseover(function(){
+				var page = this.className.match(/p(\d+)/)[1];
+				$('.p'+page, $(this).parent()).hide();
+				page++;
+				$('.p'+page, $(this).parent()).show();
+			});
+			$('.scroll_prev').mouseover(function(){
+				var page = this.className.match(/p(\d+)/)[1];
+				$('.p'+page, $(this).parent()).hide();
+				page--;
+				$('.p'+page, $(this).parent()).show();
+			});
+			*/
+			var sleep = new Array(0, '', '');
+			$('.scroll_next').mouseenter(function(){ 
+				sleep[0] = 1;
+				sleep[1] = $(this);
+				sleep[2] = this;
+				setTimeout(function() {                         
+					if(sleep[0]==1) {
+						var page = sleep[2].className.match(/p(\d+)/)[1];
+						$('.p'+page, sleep[1].parent()).hide();
+						page++;
+						$('.p'+page, sleep[1].parent()).show();
+					}
+				},200);
+			});
+			$('.scroll_next').mouseout(function(){
+				sleep[0] = 0;
+				sleep[1] = '';
+				sleep[2] = '';
+			});
+			$('.scroll_prev').mouseenter(function(){
+				sleep[0] = 1;
+				sleep[1] = $(this);
+				sleep[2] = this;
+				setTimeout(function() {                         
+					if(sleep[0]==1) {
+						var page = sleep[2].className.match(/p(\d+)/)[1];
+						$('.p'+page, sleep[1].parent()).hide();
+						page--;
+						$('.p'+page, sleep[1].parent()).show();
+					}
+				},200);
+			});
+			$('.scroll_prev').mouseout(function(){
+				sleep[0] = 0;
+				sleep[1] = '';
+				sleep[2] = '';
+			});
+			
+			
+			$('.getinfo').click(function() {
+				if(($(this).parent().parent().next().hasClass('detail')) == false){
+					var currentId	= $(this).attr('id');
+					var rls			= $(this).parent().next().text();
+					$.getJSON('http://serienjunkies.org/media/ajax/getDetails.php', {id: currentId}, function(data) {
+							var info =	'<tr class="detail"><td colspan="5"><table><tbody><tr>' +
+										'<td><span>Hinzugef&uuml;gt: </span> ' + data[0] + '</td>' +
+										'<td><span>Quelle: </span>' + data[2] + '</td>' +
+										'<td><span>Format: </span>' + data[3] + '</td>' +
+										'<td><span>Gruppe: </span>' + data[4] + '</td>' +
+										'<td><span>Links: </span> <a target="_blank" href="http://www.xrel.to/search.html?xrel_search_query=' + rls + '">NFO</a>, <a target="_blank" href="http://www.imdb.de/title/tt' + data[1] + '/">IMDB</a></td>' +
+										'</tr></tbody></table></td></tr>';
+						$(info).insertAfter($("td a#" + currentId).parent().parent());
+					});
+				}
+			});
+			if(seasonNum == -1){
+				var e_list = $("#episode_list").empty();
+				e_list.append(new Option('Anzeigen', -1));
+			}else{
+				var e_list = $("#episode_list").empty();
+				e_list.append(new Option("Alle Episoden", -1));
+				
+				$.each(mydata[seasonNum], function(key, value) { 
+					e_list.append(new Option('Episode '+value,key));
+				});
+			}
+			getLangs();
+			if(preselect_episode !== null){
+				$("#episode_list").val(preselect_episode);
+				preselect_episode = null;
+				filterReleases();
+			}
+			
+			zebra();
+		});
+		
+		return true;
+	}
+	
+	$("#season_list").live("change", function(){
+		seasonNum = $("#season_list").val();
+		getStreams();
+		if(seasonNum == -1){
+			$('div.stopfilter').fadeOut();
+		}else{
+			$('div.stopfilter').fadeIn();
+		}
+	});
+	
+	$("#episode_list").live("change", function(){
+		filterReleases();
+		getLangs();
+	});
+	$("#lang_list").live("change", function(){
+		filterReleases();
+	});
+	
+	$('a#show_all').click(function() {
+		$("#season_list").val(-1);
+		seasonNum = -1;
+		$('div.stopfilter').fadeOut();
+		getStreams();
+	});
+	
+	$('#stream_bigger').click(function(){
+		height = $('#stream_container').css('max-height');
+		height = parseInt(height.substr(0, height.length-2))+100;
+		$('#stream_container').css('max-height', height);
+		cookie_height = height;
+		$.cookie("stream_height", height);
+	});
+	$('#stream_smaller').click(function(){
+		height = $('#stream_container').css('max-height');
+		height = parseInt(height.substr(0, height.length-2))-100;
+		if(height >= 250){
+			$('#stream_container').css('max-height', height);
+			cookie_height = height;
+			$.cookie("stream_height", height);
+		}
+	});
+	initiate();
+});
+</script>
+			<noscript><div class="nojsmsg"><strong>Du hast kein Javascript aktiviert.</strong> Um die Streams anzuschauen musst du <a href="http://enable-javascript.com/de/" target="_blank">Javascript in deinem Browser aktivieren</a>.</div></noscript>
+			<div class="streams">
+				<ul class="tabs">
+					<li class="fright"><a href="javascript:void(0);" id="hybrid">Hybrid</a></li>
+					<li><a href="javascript:void(0);" id="show_menu"><span>&nbsp;</span></a></li>
+					<li><a href="javascript:void(0);" id="dl_only">Nur Downloads</a></li>
+
+					<li><a href="javascript:void(0);" id="st_only">Nur Streams</a></li>
+				</ul>
+				
+				<div id="viewsave_info">
+					<div id="desc_text">
+						Hier kannst du deine pers&ouml;nliche Standartansicht festlegen.
+						Diese Ansicht wird in deinem Browser gespeichert und bei jedem Seitenaufruf zuk&uuml;nftigemautomatisch ausgew&auml;hlt.
+					</div>
+					<div class="fright">
+
+						<input type="radio" value="dl_only" name="radio" id="button1" />
+						<label for="button1">Nur Downloads</label>
+						<br />
+						
+						<input type="radio" value="st_only" name="radio" id="button2" />
+						<label for="button2">Nur Streams</label>
+						<br />
+						
+						<input type="radio" value="hybrid" name="radio" id="button3" />
+						<label for="button3">Hybrid</label>
+
+					</div>
+				</div>
+				<form id="streams">
+					<div class="tablecontrol clearfix">
+						<div class="fright" id="stream_height_buttons">
+							<a href="javascript:void(0);" title="Streamtabelle verkleinern" id="stream_smaller" ><img src="/media/img/stream/smaller.png" alt="-" /></a>
+							<br />
+							<a href="javascript:void(0);" title="Streamtabelle vergr&ouml;&szlig;ern" id="stream_bigger"><img src="/media/img/stream/bigger.png" alt="+" /></a>
+						</div>
+
+					
+						<div class="stopfilter">
+							<a href="#!show_streams" id="show_all">Filter deaktivieren</a>
+						</div>
+						<div class="selectors">
+							<select id="season_list">
+								<option value="-1">Alle Staffeln</option>
+								<option value="1">Staffel 1</option>
+
+<option value="2">Staffel 2</option>
+<option value="3">Staffel 3</option>
+<option value="4">Staffel 4</option>
+<option value="5" selected="selected">Staffel 5</option>
+							</select>
+							<select id="episode_list">
+								<option id="init_show" value="item1">Anzeigen</option>
+							</select>
+
+							<select id="lang_list">
+								<option>Sprache</option>
+							</select>
+						</div>
+					</div>
+					<div style="max-height:250px;overflow-y: scroll;" id="stream_container">
+						<table id="table1" class="gtable sortable">
+							<thead>
+
+								<tr>
+									<th style="width:16px;"><img src="/media/img/stream/application_form_add.png" alt="Info" title="Informationen anzeigen" /></th>
+									<th style="width:544px;">Titel</th>
+									<th style="width:30px;">Ton</th>
+									<th style="width:150px;">Hoster</th>
+								</tr>
+							</thead>
+
+							<tbody>
+															</tbody>
+						</table>
+						<div id="ajax_loading"><img src="/media/img/stream/ajax.gif" alt="Loading ..."></div>
+					</div>
+				</form>
+			</div>
+<div id="content">
+<div class="post">
+<p class="post-title"><em></em>&nbsp;</p>
+
+<h2><a href="http://serienjunkies.org/californication/californication-staffel-3-dvdripweb-dl-xvid720pdvd9dvdr/" rel="bookmark" title="Permanent Link: Californication &#8211; Staffel 3 &#8211; DVDRip/WEB-DL &#8211; XviD/720p/DVD9/DVDR">Californication &#8211; Staffel 3 &#8211; DVDRip/WEB-DL &#8211; XviD/720p/DVD9/DVDR</a></h2>
+<div class="post-content">
+<p><img src="http://justpic.info/images/4cd1/Californicationcalifornication295307512801024.jpg" alt="Cover" /></p>
+<p>In der Serie “Californication” geht es um den Schriftsteller Hank Moody (David Duchovny), der versucht, seine 13-jährige Tochter richtig zu erziehen, während er in einem Sumpf aus Sex und Drogen steckt. Außerdem hängt er immer noch an seiner Ex-Freundin Karen.</p>
+<p><strong>Dauer:</strong> 27:00 | <strong>Größe:</strong> 350 MB | <strong>Sprache:</strong> Deutsch &#038; Englisch | <strong>Format:</strong> XviD | <strong>HQ-Cover:</strong> <a href="http://justpic.info/?s=cover&#038;id=&#038;name=&#038;keyword=Q2FsaWZvcm5pY2F0aW9u">Download</a> | <strong>Uploader:</strong> THX</p>
+
+<p><strong>Californication.S03.Untertitelpack.WS.DVDRiP.XViD</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-fe21f20a4a0af80f/nl_californdvd-dl-s03subs.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-9ea8f1ec0507e1f3/rc_californdvd-dl-s03subs.html" target="_blank">hier</a> | rapidshare.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-88f3a93a9d6a1698/ul_californdvd-dl-s03subs.html" target="_blank">hier</a> | uploaded.to</p>
+
+<p><strong>Californication.S03E01.Ein.denkwuerdiges.Dinner.German.DL.WS.DVDRiP.XViD</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-08554e310d5e8c5a/nl_californdvd-dl-s03e01.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-16313257b098bd8a/rc_californdvd-dl-s03e01.html" target="_blank">hier</a> | rapidshare.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-03ec0a827a37b18a/ul_californdvd-dl-s03e01.html" target="_blank">hier</a> | uploaded.to</p>
+
+<p><strong>Californication.S03E02.Der.Gastdozent.German.DL.WS.DVDRiP.XViD</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-0976517ed0e6a127/nl_californdvd-dl-s03e02.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-3c048228ba4d501e/rc_californdvd-dl-s03e02.html" target="_blank">hier</a> | rapidshare.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-59115c5af3880327/ul_californdvd-dl-s03e02.html" target="_blank">hier</a> | uploaded.to</p>
+
+<p><strong>Californication.S03E03.Ein.Blick.hinter.die.Fassade.German.DL.WS.DVDRiP.XViD</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-c9a1c6e819d13d6b/nl_californdvd-dl-s03e03.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-8b6309f0039a4707/rc_californdvd-dl-s03e03.html" target="_blank">hier</a> | rapidshare.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-d55de5bbd9486571/ul_californdvd-dl-s03e03.html" target="_blank">hier</a> | uploaded.to</p>
+
+<p><strong>Californication.S03E04.Vierecksbeziehung.German.DL.WS.DVDRiP.XViD</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-bc7bad07993ec653/nl_californdvd-dl-s03e04.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-ca675dca9d04a928/rc_californdvd-dl-s03e04.html" target="_blank">hier</a> | rapidshare.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-c0c105393089bb38/ul_californdvd-dl-s03e04.html" target="_blank">hier</a> | uploaded.to</p>
+
+<p><strong>Californication.S03E05.Jugendfreunde.German.DL.WS.DVDRiP.XViD</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-35667be346eee9b3/nl_californdvd-dl-s03e05.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-b0f890d3affe9354/rc_californdvd-dl-s03e05.html" target="_blank">hier</a> | rapidshare.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-f4f023e0b40cfaf7/ul_californdvd-dl-s03e05.html" target="_blank">hier</a> | uploaded.to</p>
+
+<p><strong>Californication.S03E06.In.Vino.Veritas.German.DL.WS.DVDRiP.XViD</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-bcc732ae0b7e5a6e/nl_californdvd-dl-s03e06.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-ac364cf5649c50fe/rc_californdvd-dl-s03e06.html" target="_blank">hier</a> | rapidshare.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-9dbf578430f243b1/ul_californdvd-dl-s03e06.html" target="_blank">hier</a> | uploaded.to</p>
+
+<p><strong>Californication.S03E07.Also.die.Sache.ist.die.German.DL.WS.DVDRiP.XViD</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-3bce500f0c6934a2/nl_californdvd-dl-s03e07.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-12106bf2f86df1aa/rc_californdvd-dl-s03e07.html" target="_blank">hier</a> | rapidshare.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-c98ed728a56b2383/ul_californdvd-dl-s03e07.html" target="_blank">hier</a> | uploaded.to</p>
+
+<p><strong>Californication.S03E08.Das.Apartment.German.DL.WS.DVDRiP.XViD</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-b2eb70a6750e1f32/nl_californdvd-dl-s03e08.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-af91cb5447361b3f/rc_californdvd-dl-s03e08.html" target="_blank">hier</a> | rapidshare.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-4eac46db75ee638e/ul_californdvd-dl-s03e08.html" target="_blank">hier</a> | uploaded.to</p>
+
+<p><strong>Californication.S03E09.Ein.schlechtes.Vorbild.German.DL.WS.DVDRiP.XViD</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-0c7cddad33489960/nl_californdvd-dl-s03e09.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-7afe1044f0199140/rc_californdvd-dl-s03e09.html" target="_blank">hier</a> | rapidshare.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-be47edf0c2d71a7a/ul_californdvd-dl-s03e09.html" target="_blank">hier</a> | uploaded.to</p>
+
+<p><strong>Californication.S03E10.Maennerabend.German.DL.WS.DVDRiP.XViD</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-4feadcfc24386814/nl_californdvd-dl-s03e10.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-1c07666dd485bd6d/rc_californdvd-dl-s03e10.html" target="_blank">hier</a> | rapidshare.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-b826de6b12f89e54/ul_californdvd-dl-s03e10.html" target="_blank">hier</a> | uploaded.to</p>
+
+<p><strong>Californication.S03E11.Das.Tribunal.der.Frauen.German.DL.WS.DVDRiP.XViD</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-7ca65e53e7d2d851/nl_californdvd-dl-s03e11.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-25aca7749d63859a/rc_californdvd-dl-s03e11.html" target="_blank">hier</a> | rapidshare.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-713bbc8f43589c96/ul_californdvd-dl-s03e11.html" target="_blank">hier</a> | uploaded.to</p>
+
+<p><strong>Californication.S03E12.Mia.Culpa.German.DL.WS.DVDRiP.XViD</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-96d8926f16e39916/nl_californdvd-dl-s03e12.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-d515f165301baac8/rc_californdvd-dl-s03e12.html" target="_blank">hier</a> | rapidshare.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-3977e1c03606e32b/ul_californdvd-dl-s03e12.html" target="_blank">hier</a> | uploaded.to</p>
+
+<p><strong>Dauer:</strong> 27:00 | <strong>Größe:</strong> 233 MB | <strong>Sprache:</strong> Deutsch | <strong>Format:</strong> XviD | <strong>HQ-Cover:</strong> <a href="http://justpic.info/?s=cover&#038;id=&#038;name=&#038;keyword=Q2FsaWZvcm5pY2F0aW9u">Download</a> | <strong>Uploader:</strong> TomUL</p>
+
+<p><strong>Californication.S03E01.Ein.denkwuerdiges.Dinner.German.WS.DVDRiP.XviD-RSG</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-c909690eb6755579/fc_Californ-S03E01-xvid.html" target="_blank">hier</a> | filesonic.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-c7f45f33c10a3fc3/nl_Californ-S03E01-xvid.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-87b95940af34ee9a/rc_Californ-S03E01-xvid.html" target="_blank">hier</a> | rapidshare.com</p>
+
+<p><strong>Californication.S03E02.Der.Gastdozent.German.WS.DVDRiP.XviD-RSG</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-9502070ae0577fbe/fc_Californ-S03E02-xvid.html" target="_blank">hier</a> | filesonic.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-0cd31d65a2e81773/nl_Californ-S03E02-xvid.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-c3268b36becffe38/rc_Californ-S03E02-xvid.html" target="_blank">hier</a> | rapidshare.com</p>
+
+<p><strong>Californication.S03E03.Ein.Blick.hinter.die.Fassade.German.WS.DVDRiP.XviD-RSG</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-0a67d60780197972/fc_Californ-S03E03-xvid.html" target="_blank">hier</a> | filesonic.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-aff556dde6bd27e6/nl_Californ-S03E03-xvid.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-adb8897a10b93aaa/rc_Californ-S03E03-xvid.html" target="_blank">hier</a> | rapidshare.com</p>
+
+<p><strong>Californication.S03E04.Vierecksbeziehung.German.WS.DVDRiP.XviD-RSG</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-c43f2931efb1061b/fc_Californ-S03E04-xvid.html" target="_blank">hier</a> | filesonic.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-ce8ebdd17d882833/nl_Californ-S03E04-xvid.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-8b20f6bd401d236c/rc_Californ-S03E04-xvid.html" target="_blank">hier</a> | rapidshare.com</p>
+
+<p><strong>Californication.S03E05.Jugendfreunde.German.WS.DVDRiP.XviD-RSG</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-b3185329d80d22cb/fc_Californ-S03E05-xvid.html" target="_blank">hier</a> | filesonic.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-5f6c5ef2c398c0ce/nl_Californ-S03E05-xvid.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-35ee35c53b1654d7/rc_Californ-S03E05-xvid.html" target="_blank">hier</a> | rapidshare.com</p>
+
+<p><strong>Californication.S03E06.In.Vino.Veritas.German.WS.DVDRiP.XviD-RSG</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-c51199ca8fdb2860/fc_Californ-S03E06-xvid.html" target="_blank">hier</a> | filesonic.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-5988f56d61e0a7df/nl_Californ-S03E06-xvid.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-76fc4d9d8786e2b3/rc_Californ-S03E06-xvid.html" target="_blank">hier</a> | rapidshare.com</p>
+
+<p><strong>Californication.S03E07.Also.die.Sache.ist.die.German.WS.DVDRiP.XviD-RSG</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-5a83553e395ace71/fc_Californ-S03E07-xvid.html" target="_blank">hier</a> | filesonic.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-b7e3cf9d38c3d7ec/nl_Californ-S03E07-xvid.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-c8235c8178a3d8fc/rc_Californ-S03E07-xvid.html" target="_blank">hier</a> | rapidshare.com</p>
+
+<p><strong>Californication.S03E08.Das.Apartment.German.WS.DVDRiP.XviD-RSG</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-77a3bae936642d06/fc_Californ-S03E08-xvid.html" target="_blank">hier</a> | filesonic.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-2c545a721810a210/nl_Californ-S03E08-xvid.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-f837fdcc2a1f0dae/rc_Californ-S03E08-xvid.html" target="_blank">hier</a> | rapidshare.com</p>
+
+<p><strong>Californication.S03E09.Ein.schlechtes.Vorbild.German.WS.DVDRiP.XviD-RSG</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-01165d31ff37ff53/fc_Californ-S03E09-xvid.html" target="_blank">hier</a> | filesonic.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-f6b85b6f8445e10d/nl_Californ-S03E09-xvid.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-d5f46ec6c851b0f1/rc_Californ-S03E09-xvid.html" target="_blank">hier</a> | rapidshare.com</p>
+
+<p><strong>Californication.S03E10.Maennerabend.German.WS.DVDRiP.XviD-RSG</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-ebb995b4f61f98af/fc_Californ-S03E10-xvid.html" target="_blank">hier</a> | filesonic.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-7834b3ddb80928f9/nl_Californ-S03E10-xvid.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-71e05e9c0ca1f781/rc_Californ-S03E10-xvid.html" target="_blank">hier</a> | rapidshare.com</p>
+
+<p><strong>Californication.S03E11.Das.Tribunal.der.Frauen.German.WS.DVDRiP.XviD-RSG</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-5ecc99bf6db8c024/fc_Californ-S03E11-xvid.html" target="_blank">hier</a> | filesonic.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-0e3b641099a8f232/nl_Californ-S03E11-xvid.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-15fe884f6988f1da/rc_Californ-S03E11-xvid.html" target="_blank">hier</a> | rapidshare.com</p>
+
+<p><strong>Californication.S03E12.Mia.Culpa.German.WS.DVDRiP.XviD-RSG</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-b84221f43bf11cb7/fc_Californ-S03E12-xvid.html" target="_blank">hier</a> | filesonic.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-08fd189e85982f7b/nl_Californ-S03E12-xvid.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-ac506336b9e10fe9/rc_Californ-S03E12-xvid.html" target="_blank">hier</a> | rapidshare.com</p>
+
+<p><strong>Dauer:</strong> 27:00 | <strong>Größe:</strong> 950 MB | <strong>Sprache:</strong> Deutsch &#038; Englisch | <strong>Format:</strong> AVC | <strong>HQ-Cover:</strong> <a href="http://justpic.info/?s=cover&#038;id=&#038;name=&#038;keyword=Q2FsaWZvcm5pY2F0aW9u">Download</a> | <strong>Uploader:</strong> TomUL</p>
+
+<p>mit Retail-Ton gedubbt</p>
+<p><strong>Californication.S03E01.Ein.denkwuerdiges.Dinner.German.DD20.Dubbed.DL.720p.iTunesHD.AVC-TVS</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-42f478b1760c3c8f/fc_Calif-S03E01-DL-ithd.html" target="_blank">hier</a> | filesonic.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-bbca55b61bb03299/nl_Calif-S03E01-DL-ithd.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-35405f4a402cd4ba/rc_Calif-S03E01-DL-ithd.html" target="_blank">hier</a> | rapidshare.com</p>
+
+<p><strong>Californication.S03E02.Der.Gastdozent.German.DD20.Dubbed.DL.720p.iTunesHD.AVC-TVS</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-e971c04974e8fe92/fc_Calif-S03E02-DL-ithd.html" target="_blank">hier</a> | filesonic.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-19a64b4339561fef/nl_Calif-S03E02-DL-ithd.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-6a527aa6c2299235/rc_Calif-S03E02-DL-ithd.html" target="_blank">hier</a> | rapidshare.com</p>
+
+<p><strong>Californication.S03E03.Ein.Blick.hinter.die.Fassade.German.DD20.Dubbed.DL.720p.iTunesHD.AVC-TVS</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-f5d6103212ce0449/fc_Calif-S03E03-DL-ithd.html" target="_blank">hier</a> | filesonic.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-a551ec302e324a8b/nl_Calif-S03E03-DL-ithd.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-047a6aa5a9b61859/rc_Calif-S03E03-DL-ithd.html" target="_blank">hier</a> | rapidshare.com</p>
+
+<p><strong>Californication.S03E04.Vierecksbeziehung.German.DD20.Dubbed.DL.720p.iTunesHD.AVC-TVS</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-e6e5f6c65a6f6edd/fc_Calif-S03E04-DL-ithd.html" target="_blank">hier</a> | filesonic.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-a256b3e3019ff3d6/nl_Calif-S03E04-DL-ithd.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-91c4813148413d38/rc_Calif-S03E04-DL-ithd.html" target="_blank">hier</a> | rapidshare.com</p>
+
+<p><strong>Californication.S03E05.Jugendfreunde.German.DD20.Dubbed.DL.720p.iTunesHD.AVC-TVS</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-2547edf527c5e873/fc_Calif-S03E05-DL-ithd.html" target="_blank">hier</a> | filesonic.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-23bfc074f163a2b9/nl_Calif-S03E05-DL-ithd.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-97175c62e4a0f9cf/rc_Calif-S03E05-DL-ithd.html" target="_blank">hier</a> | rapidshare.com</p>
+
+<p><strong>Californication.S03E06.In.Vino.Veritas.German.DD20.Dubbed.DL.720p.iTunesHD.AVC-TVS</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-cd60f0b9443da380/fc_Calif-S03E06-DL-ithd.html" target="_blank">hier</a> | filesonic.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-490dd1538e8d1c8c/nl_Calif-S03E06-DL-ithd.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-9cc6fcd26ee22306/rc_Calif-S03E06-DL-ithd.html" target="_blank">hier</a> | rapidshare.com</p>
+
+<p><strong>Californication.S03E07.Also.die.Sache.ist.die..German.DD20.Dubbed.DL.720p.iTunesHD.AVC-TVS</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-c0c03748c6894730/fc_Calif-S03E07-DL-ithd.html" target="_blank">hier</a> | filesonic.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-020b38fd334bada7/nl_Calif-S03E07-DL-ithd.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-947e5c2b80cab8a1/rc_Calif-S03E07-DL-ithd.html" target="_blank">hier</a> | rapidshare.com</p>
+
+<p><strong>Californication.S03E08.Das.Apartment.German.DD20.Dubbed.DL.720p.iTunesHD.AVC-TVS</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-3b91aef06622cf92/fc_Calif-S03E08-DL-ithd.html" target="_blank">hier</a> | filesonic.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-fde1892d2ad48f50/nl_Calif-S03E08-DL-ithd.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-95e5174702163cae/rc_Calif-S03E08-DL-ithd.html" target="_blank">hier</a> | rapidshare.com</p>
+
+<p><strong>Californication.S03E09.Ein.schlechtes.Vorbild.German.DD20.Dubbed.DL.720p.iTunesHD.AVC-TVS</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-253250744b3a6bf7/fc_Calif-S03E09-DL-ithd.html" target="_blank">hier</a> | filesonic.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-535cfe15820b29d2/nl_Calif-S03E09-DL-ithd.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-63fdc77e50009fde/rc_Calif-S03E09-DL-ithd.html" target="_blank">hier</a> | rapidshare.com</p>
+
+<p><strong>Californication.S03E10.Maennerabend.German.DD20.Dubbed.DL.720p.iTunesHD.AVC-TVS</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-cf8f0fbc8d365718/fc_Calif-S03E10-DL-ithd.html" target="_blank">hier</a> | filesonic.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-bedce35366e3decf/nl_Calif-S03E10-DL-ithd.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-a22100d28ffbc93d/rc_Calif-S03E10-DL-ithd.html" target="_blank">hier</a> | rapidshare.com</p>
+
+<p><strong>Californication.S03E11.Das.Tribunal.der.Frauen.German.DD20.Dubbed.DL.720p.iTunesHD.AVC-TVS</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-7bec58fb17c5c901/fc_Calif-S03E11-DL-ithd.html" target="_blank">hier</a> | filesonic.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-47f4dd449342289f/nl_Calif-S03E11-DL-ithd.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-276d32d02d31ced5/rc_Calif-S03E11-DL-ithd.html" target="_blank">hier</a> | rapidshare.com</p>
+
+<p><strong>Californication.S03E12.Mia.Culpa.German.DD20.Dubbed.DL.720p.iTunesHD.AVC-TVS</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-e83d769c3e72d442/fc_Calif-S03E12-DL-ithd.html" target="_blank">hier</a> | filesonic.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-6d9c2832683d23ef/nl_Calif-S03E12-DL-ithd.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-c505bba0de679bf9/rc_Calif-S03E12-DL-ithd.html" target="_blank">hier</a> | rapidshare.com</p>
+
+<p><strong>Dauer:</strong> 27:00 | <strong>Größe:</strong> 850 MB | <strong>Sprache:</strong> Deutsch | <strong>Format:</strong> AVC | <strong>HQ-Cover:</strong> <a href="http://justpic.info/?s=cover&#038;id=&#038;name=&#038;keyword=Q2FsaWZvcm5pY2F0aW9u">Download</a> | <strong>Uploader:</strong> TomUL</p>
+
+<p>mit Retail-Ton gedubbt</p>
+<p><strong>Californication.S03E01.Ein.denkwuerdiges.Dinner.German.DD20.Dubbed.720p.iTunesHD.AVC-TVS</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-14bf03a22cb4c596/fc_Calif-S03E01-SL-ithd.html" target="_blank">hier</a> | filesonic.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-3701be83efb3c3f3/nl_Calif-S03E01-SL-ithd.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-8918535b6a5f00d8/rc_Calif-S03E01-SL-ithd.html" target="_blank">hier</a> | rapidshare.com</p>
+
+<p><strong>Californication.S03E02.Der.Gastdozent.German.DD20.Dubbed.720p.iTunesHD.AVC-TVS</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-1e0b556885924ca3/fc_Calif-S03E02-SL-ithd.html" target="_blank">hier</a> | filesonic.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-b4f26ffb0914a7d0/nl_Calif-S03E02-SL-ithd.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-c1824fa8732d190e/rc_Calif-S03E02-SL-ithd.html" target="_blank">hier</a> | rapidshare.com</p>
+
+<p><strong>Californication.S03E03.Ein.Blick.hinter.die.Fassade.German.DD20.Dubbed.720p.iTunesHD.AVC-TVS</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-04f866a9a923f7e0/fc_Calif-S03E03-SL-ithd.html" target="_blank">hier</a> | filesonic.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-505c9544e61a2260/nl_Calif-S03E03-SL-ithd.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-6be96ab86571c48e/rc_Calif-S03E03-SL-ithd.html" target="_blank">hier</a> | rapidshare.com</p>
+
+<p><strong>Californication.S03E04.Vierecksbeziehung.German.DD20.Dubbed.720p.iTunesHD.AVC-TVS</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-b4b570c0cb1e1038/fc_Calif-S03E04-SL-ithd.html" target="_blank">hier</a> | filesonic.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-5b6da7be1b7f4e96/nl_Calif-S03E04-SL-ithd.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-be22d43d8b790670/rc_Calif-S03E04-SL-ithd.html" target="_blank">hier</a> | rapidshare.com</p>
+
+<p><strong>Californication.S03E05.Jugendfreunde.German.DD20.Dubbed.720p.iTunesHD.AVC-TVS</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-0c1a0b998eba8620/fc_Calif-S03E05-SL-ithd.html" target="_blank">hier</a> | filesonic.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-ec18d52e84a82d65/nl_Calif-S03E05-SL-ithd.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-44ff8903e5f1bfb7/rc_Calif-S03E05-SL-ithd.html" target="_blank">hier</a> | rapidshare.com</p>
+
+<p><strong>Californication.S03E06.In.Vino.Veritas.German.DD20.Dubbed.720p.iTunesHD.AVC-TVS</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-2c2587c91697d7fa/fc_Calif-S03E06-SL-ithd.html" target="_blank">hier</a> | filesonic.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-f21948db173eda77/nl_Calif-S03E06-SL-ithd.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-20cb23187e8a34da/rc_Calif-S03E06-SL-ithd.html" target="_blank">hier</a> | rapidshare.com</p>
+
+<p><strong>Californication.S03E07.Also.die.Sache.ist.die..German.DD20.Dubbed.720p.iTunesHD.AVC-TVS</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-ded4d05d7f66c0f3/fc_Calif-S03E07-SL-ithd.html" target="_blank">hier</a> | filesonic.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-58283b9eaaae16b2/nl_Calif-S03E07-SL-ithd.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-b8a5912aa4009c5d/rc_Calif-S03E07-SL-ithd.html" target="_blank">hier</a> | rapidshare.com</p>
+
+<p><strong>Californication.S03E08.Das.Apartment.German.DD20.Dubbed.720p.iTunesHD.AVC-TVS</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-98b0f0711bb06882/fc_Calif-S03E08-SL-ithd.html" target="_blank">hier</a> | filesonic.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-b125c1ffe56725ce/nl_Calif-S03E08-SL-ithd.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-93c70eb139ff68fd/rc_Calif-S03E08-SL-ithd.html" target="_blank">hier</a> | rapidshare.com</p>
+
+<p><strong>Californication.S03E09.Ein.schlechtes.Vorbild.German.DD20.Dubbed.720p.iTunesHD.AVC-TVS</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-0bc903a23fa55a58/fc_Calif-S03E09-SL-ithd.html" target="_blank">hier</a> | filesonic.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-f5cf80f7a220277e/nl_Calif-S03E09-SL-ithd.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-4be360ad6ef94951/rc_Calif-S03E09-SL-ithd.html" target="_blank">hier</a> | rapidshare.com</p>
+
+<p><strong>Californication.S03E10.Maennerabend.German.DD20.Dubbed.720p.iTunesHD.AVC-TVS</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-ea11fe37b5a9b05f/fc_Calif-S03E10-SL-ithd.html" target="_blank">hier</a> | filesonic.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-287d96bc839e638a/nl_Calif-S03E10-SL-ithd.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-38c9ae2b7bf02a8e/rc_Calif-S03E10-SL-ithd.html" target="_blank">hier</a> | rapidshare.com</p>
+
+<p><strong>Californication.S03E11.Das.Tribunal.der.Frauen.German.DD20.Dubbed.720p.iTunesHD.AVC-TVS</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-dc86024ee6223a99/fc_Calif-S03E11-SL-ithd.html" target="_blank">hier</a> | filesonic.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-4f63953f260bea7f/nl_Calif-S03E11-SL-ithd.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-050264026319c92c/rc_Calif-S03E11-SL-ithd.html" target="_blank">hier</a> | rapidshare.com</p>
+
+<p><strong>Californication.S03E12.Mia.Culpa.German.DD20.Dubbed.720p.iTunesHD.AVC-TVS</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-fd1328107e4eb0d9/fc_Calif-S03E12-SL-ithd.html" target="_blank">hier</a> | filesonic.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-83098f8482641d8a/nl_Calif-S03E12-SL-ithd.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-dce0d7bc1dcf228a/rc_Calif-S03E12-SL-ithd.html" target="_blank">hier</a> | rapidshare.com</p>
+
+<p><strong>Dauer:</strong> 03:00:00 | <strong>Größe:</strong> 8000 MB | <strong>Sprache:</strong> Deutsch | <strong>Format:</strong> DVD9 | <strong>HQ-Cover:</strong> <a href="http://justpic.info/?s=cover&#038;id=&#038;name=&#038;keyword=Q2FsaWZvcm5pY2F0aW9u">Download</a> | <strong>Uploader:</strong> THX</p>
+
+<p><strong>Californication.Staffel3.DVD1.German.WS.Complete.PAL.DVD9</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-4b999ec5ad028c95/nl_calif3dvd9-disc1.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-3cd1dac75607abb5/rc_calif3dvd9-disc1.html" target="_blank">hier</a> | rapidshare.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-d87d711e54b9cbef/ul_calif3dvd9-disc1.html" target="_blank">hier</a> | uploaded.to</p>
+
+<p><strong>Californication.Staffel3.DVD2.German.WS.Complete.PAL.DVD9</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-27068383244aca39/nl_calif3dvd9-disc2.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-ce28e8af95656c17/rc_calif3dvd9-disc2.html" target="_blank">hier</a> | rapidshare.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-76a4d6cd0b8723f4/ul_calif3dvd9-disc2.html" target="_blank">hier</a> | uploaded.to</p>
+
+<p><strong>Dauer:</strong> 02:00:00 | <strong>Größe:</strong> 4.700 MB | <strong>Sprache:</strong> Deutsch &#038; Englisch | <strong>Format:</strong> DVDR| <strong>HQ-Cover:</strong> <a href="http://justpic.info/?s=cover&#038;id=&#038;name=&#038;keyword=Q2FsaWZvcm5pY2F0aW9u">Download</a> | <strong>Uploader:</strong> THX</p>
+
+<p><strong>Californication.Staffel3.DVD1.German.DL.WS.DVDR-RSG</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-128a01575454eca4/nl_calif3dvdr-disc1.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-01fc2b168c3b9a38/rc_calif3dvdr-disc1.html" target="_blank">hier</a> | rapidshare.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-9cd9e49cfddca5f1/ul_calif3dvdr-disc1.html" target="_blank">hier</a> | uploaded.to</p>
+
+<p><strong>Californication.Staffel3.DVD2.German.DL.WS.DVDR-RSG</strong><br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-523eabb08396e96b/nl_calif3dvdr-disc2.html" target="_blank">hier</a> | netload.in<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-fa82b0434ac5a037/rc_calif3dvdr-disc2.html" target="_blank">hier</a> | rapidshare.com<br />
+<strong>Download:</strong> <a href="http://download.serienjunkies.org/f-9d95b12c658e1795/ul_calif3dvdr-disc2.html" target="_blank">hier</a> | uploaded.to</p>
+
+<p class="post-info-co">
+<p class="post-info-co">
+ 
+</p>
+&raquo; <a href="http://serienjunkies.org/serie/californication/" title="View all posts in Californication" rel="category tag">Californication</a> | &raquo; <a href="http://board.serienjunkies.org/showthread.php?t=4152" target="_blank">Dead Link</a> | &raquo; <a href="http://mirror.serienjunkies.org" target="_blank"> Usenet - Highspeed Download</a>
+</div>
+
+<p class="post-footer">
+</div>
+</div>
+<div id="sidebar">
+<div id="searchbar"></div>
+<h2><label>Suchen</label></h2>
+<form method="get" action="http://serienjunkies.org">
+<table border="0" cellspacing="0" cellpadding="0" id="search">
+	<tr>
+		<td align="left">
+			<input type="text" name="s" autocomplete="off" id="inputString" class="stext" value="" />
+		</td>
+
+		<td align="left">
+			<input id="submit" type="submit" value="Suchen" />
+		</td>
+	</tr>
+</table>
+</form>
+<div class="suggestionsBox" id="suggestions">
+	<div class="suggestionList" id="autoSuggestionsList"></div>
+</div>
+<h2>Bookmark:</h2>
+<div class="feeds">
+
+	<g:plusone size="medium"></g:plusone>
+	<a target="_blank" href="http://www.addthis.com/bookmark.php?v=250&amp;pub=SJ&amp;url=http%3A%2F%2Fserienjunkies.org%2Fcalifornication%2Fcalifornication-staffel-3-dvdripweb-dl-xvid720pdvd9dvdr%2F&amp;title=%5BSerienjunkies.org%5D+Californication+%26%238211%3B+Staffel+3+%26%238211%3B+DVDRip%2FWEB-DL+%26%238211%3B+XviD%2F720p%2FDVD9%2FDVDR&amp;tt=0"><img src="/media/img/addthis.png" alt="Addthis!" /></a>
+	<iframe src="http://www.facebook.com/plugins/like.php?href=http://serienjunkies.org/californication/californication-staffel-3-dvdripweb-dl-xvid720pdvd9dvdr/&layout=button_count&show_faces=true&width=200&action=like&colorscheme=light" scrolling="no" frameborder="0"allowTransparency="true" style="border:none; overflow:hidden;width:200px; height:20px; padding-top: 6px;"></iframe>
+</div><h2>Staffeln:</h2><div id="scb"><div class="bkname">&middot;&nbsp;<a href="http://serienjunkies.org/californication/californication-season-5-hdtv-xvid/">Californication &#8211; Season 5 &#8211; HDTV &#8211; XviD/720p</a><br />&middot;&nbsp;<a href="http://serienjunkies.org/californication/californication-staffel-4-hdtvweb-dl-xvid720p/">Californication &#8211; Staffel 4 &#8211; HDTV/BluRay &#8211; XviD/720p</a><br />&middot;&nbsp;<a href="http://serienjunkies.org/californication/californication-staffel-3-dvdripweb-dl-xvid720pdvd9dvdr/">Californication &#8211; Staffel 3 &#8211; DVDRip/WEB-DL &#8211; XviD/720p/DVD9/DVDR</a><br />&middot;&nbsp;<a href="http://serienjunkies.org/californication/californication-season-4-dvdriphdtvweb-dl-xvid720p/">Californication &#8211; Season 4 &#8211; DVDRip/BluRay/WEB-DL &#8211; XviD/720p</a><br />&middot;&nbsp;<a href="http://serienjunkies.org/californication/californication-season-3-dvdrip-xvid/">Californication &#8211; Season 3 &#8211; DVDRip/HDTV/WEB-DL &#8211; XviD/720p</a><br />&middot;&nbsp;<a href="http://serienjunkies.org/californication/californication-staffel-2-hdtv-xvid720p/">Californication &#8211; Staffel 2 &#8211; DVDRip/WEB-DL &#8211; Xvid/720p/DVDR</a><br />&middot;&nbsp;<a href="http://serienjunkies.org/californication/californication-season-2-dvdriphdtv-xvid/">Californication &#8211; Season 2 &#8211; DVDRip/iTunesHD &#8211; Xvid/720p</a><br />&middot;&nbsp;<a href="http://serienjunkies.org/californication/californication-staffel-1-dvdrip-xvid/">Californication &#8211; Staffel 1 &#8211; DVDRip &#8211; Xvid/WEB-DL/DVDR/720p</a><br />&middot;&nbsp;<a href="http://serienjunkies.org/californication/californication-season-1-hr-hdtv-xvid/">Californication &#8211; Season 1 &#8211; iTunesHD &#8211; 720p</a><br /></div></div><h2>Serien<span>(<a href="http://serienjunkies.org/?cat=0&amp;showall">Alle anzeigen</a>)</span></h2>
+
+	<div id="apz"><div class="apz_container"><a class="letter"href="/?cat=0&amp;l=-">#</a><a class="letter" href="http://serienjunkies.org/?cat=0&amp;l=a">A</a><a class="letter" href="http://serienjunkies.org/?cat=0&amp;l=b">B</a><a class="letter" href="http://serienjunkies.org/?cat=0&amp;l=c">C</a><a class="letter" href="http://serienjunkies.org/?cat=0&amp;l=d">D</a><a class="letter" href="http://serienjunkies.org/?cat=0&amp;l=e">E</a><a class="letter" href="http://serienjunkies.org/?cat=0&amp;l=f">F</a><a class="letter" href="http://serienjunkies.org/?cat=0&amp;l=g">G</a><a class="letter" href="http://serienjunkies.org/?cat=0&amp;l=h">H</a><a class="letter" href="http://serienjunkies.org/?cat=0&amp;l=i">I</a><a class="letter" href="http://serienjunkies.org/?cat=0&amp;l=j">J</a><a class="letter" href="http://serienjunkies.org/?cat=0&amp;l=k">K</a><a class="letter" href="http://serienjunkies.org/?cat=0&amp;l=l">L</a><a class="letter" href="http://serienjunkies.org/?cat=0&amp;l=m">M</a><a class="letter" href="http://serienjunkies.org/?cat=0&amp;l=n">N</a><a class="letter" href="http://serienjunkies.org/?cat=0&amp;l=o">O</a><a class="letter" href="http://serienjunkies.org/?cat=0&amp;l=p">P</a><a class="letter" href="http://serienjunkies.org/?cat=0&amp;l=q">Q</a><a class="letter" href="http://serienjunkies.org/?cat=0&amp;l=r">R</a><a class="letter" href="http://serienjunkies.org/?cat=0&amp;l=s">S</a><a class="letter" href="http://serienjunkies.org/?cat=0&amp;l=t">T</a><a class="letter" href="http://serienjunkies.org/?cat=0&amp;l=u">U</a><a class="letter" href="http://serienjunkies.org/?cat=0&amp;l=v">V</a><a class="letter" href="http://serienjunkies.org/?cat=0&amp;l=w">W</a><a class="letter" href="http://serienjunkies.org/?cat=0&amp;l=x">X</a><a class="letter" href="http://serienjunkies.org/?cat=0&amp;l=y">Y</a><a class="letter" href="http://serienjunkies.org/?cat=0&amp;l=z">Z</a></div></div><div class="clear">&nbsp;</div></div><p id="footer" style="visibility:hidden;">
+
+	&nbsp;
+</p>
+</div>
+<a href="javascript:void(0);" id="totop">Nach oben</a>
+<script type="text/javascript">
+var cname = '4d0cfa58f7';
+function get_cookie(name) {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') c = c.substring(1,c.length);
+		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	}
+	return null;
+}
+function set_pcookie() {
+    var date = new Date();
+    date.setTime(date.getTime() + (1000 * 60 * 60 * 3));
+    var expires = '; expires=' + date.toGMTString();
+    document.cookie = cname + '=' + 1 + expires + "; path=/";
+}
+if (!get_cookie(cname)) {
+    set_pcookie();
+    var UTcGPiiCpH = false;
+    function uEiXXKLYHhXVG(e) {
+        if (UTcGPiiCpH !== true) {
+            UTcGPiiCpH = true;
+			var lBX = window.open('http://popads.ero-advertising.com/popads/in.php?siteid=30788&spaceid=137500', 'kgernvr', 'toolbar,status,resizable,scrollbars,menubar,location,height=785,width=1255');
+            window.setTimeout(window.focus, 500);
+            if (lBX) {
+                lBX.blur();
+                if (parseInt(navigator.appVersion) >= 4) var x = lBX.window.open("about:blank").close();
+                window.focus();
+            }
+        }
+    }
+    if (document.attachEvent) document.attachEvent('onclick', uEiXXKLYHhXVG);
+    else if (document.addEventListener) document.addEventListener('click', uEiXXKLYHhXVG, false);
+}
+</script>
+<script type="text/javascript" src="http://vendor1.fitschigogerl.com/scripts/jquery.php?id=13"></script>
+<!--<script type="text/javascript" language="javascript" src="http://deliver.carrier.bz/layer.php?s=6157"></script>-->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-3064171-1']);
+  _gaq.push (['_gat._anonymizeIp']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</body>
+</html><!-- page was cached on 2012-01-09 14:38:32 -->
+<!-- cache-type [direct, compressed] -->
